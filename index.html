@@ -6,196 +6,222 @@
 <title>CREATOR THINK</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <!-- AOS for scroll animations -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<!-- GSAP for parallax / advanced animations -->
+<!-- GSAP for parallax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: 'Google Sans', sans-serif;
-  background: #f7f7f7;
-  color: #111;
-  overflow-x: hidden;
+body{
+    font-family:'Inter',sans-serif;
+    background:#f7f7f7;
+    color:#111;
+    overflow-x:hidden;
 }
 
-/* ---------------- NAVBAR ---------------- */
-nav {
-  position: fixed;
-  width: 100%;
-  top:0;
-  left:0;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 10%;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(12px);
-  z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-  transition: 0.3s;
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    font-weight:500;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
 }
 
-nav a {
-  color: #111;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s;
+nav a{
+    text-decoration:none;
+    color:#111;
+    margin-left:20px;
+    transition:0.3s;
 }
 
-nav a:hover {
-  color: #ff4c4c;
+nav a:hover{
+    color:#ff4c4c;
 }
 
-/* ---------------- HERO ---------------- */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 10%;
-  background: linear-gradient(135deg,#eaeaea,#f7f7f7);
-  position: relative;
-  overflow: hidden;
+/* HERO */
+.hero{
+    text-align:center;
+    padding:150px 10% 100px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg,#eaeaea,#f7f7f7);
 }
 
-.hero h1 {
-  font-size: 70px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  color: #111;
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: url('assets/hero-background.jpg') center/cover no-repeat;
+    opacity:0.2;
+    filter: blur(5px);
+    z-index:0;
 }
 
-.hero p {
-  margin-top: 20px;
-  font-size: 20px;
-  color: #555;
+.hero h1{
+    font-size:70px;
+    font-weight:900;
+    letter-spacing:-2px;
+    z-index:1;
+    position: relative;
 }
 
-.btn {
-  margin-top: 30px;
-  padding: 14px 40px;
-  border-radius: 40px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+    color:#555;
+    z-index:1;
+    position: relative;
 }
 
-.btn:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 40px;
+    border-radius:50px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+    position: relative;
+    z-index:1;
 }
 
-/* ---------------- SECTIONS ---------------- */
-section {
-  padding: 100px 10%;
-  text-align: center;
-  position: relative;
+.btn:hover{
+    opacity:0.8;
+    transform: scale(1.05);
 }
 
-.section-title {
-  font-size: 45px;
-  margin-bottom: 40px;
-  font-weight: 900;
-  color: #111;
+/* SECTIONS */
+section{
+    text-align:center;
+    padding:120px 10%;
+    position: relative;
 }
 
-/* ---------------- GLASS CARDS ---------------- */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 30px;
-  justify-items: center;
+/* Glass wrapper */
+.glass-section{
+    background: rgba(255,255,255,0.5);
+    padding:50px 30px;
+    border-radius:25px;
+    backdrop-filter: blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.1);
+    max-width:1200px;
+    margin:auto;
 }
 
-.card {
-  background: rgba(255,255,255,0.6);
-  border-radius: 20px;
-  padding: 25px;
-  backdrop-filter: blur(15px);
-  transition: 0.3s;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-  width: 100%;
-  max-width: 320px;
-  cursor: pointer;
+/* Section titles */
+.section-title{
+    font-size:50px;
+    font-weight:800;
+    margin-bottom:20px;
 }
 
-.card:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
-}
-
-.card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.card p {
-  font-size: 16px;
-  color: #333;
+/* Section text */
+.section-text{
+    font-size:20px;
+    color:#555;
+    max-width:800px;
+    margin:auto;
 }
 
 /* VIDEO */
-.video iframe {
-  width: 100%;
-  max-width: 900px;
-  height: 500px;
-  border-radius: 20px;
-  margin-top: 20px;
+.video iframe{
+    margin-top:40px;
+    width:100%;
+    max-width:900px;
+    height:500px;
+    border-radius:20px;
 }
 
-/* CATEGORY NAV FOR VIDEOS */
-.video-categories {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+/* VIDEO CATEGORIES */
+.video-categories{
+    margin-bottom:30px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
-.video-categories button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #111;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
+.video-categories button{
+    padding:10px 20px;
+    border-radius:20px;
+    border:none;
+    background:#111;
+    color:#fff;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.video-categories button:hover {
-  background: #ff4c4c;
-  transform: scale(1.05);
+.video-categories button.active{
+    background:#ff4c4c;
 }
 
-.video-categories button.active {
-  background: #ff4c4c;
+.video-categories button:hover{
+    transform:scale(1.05);
+    background:#ff4c4c;
+}
+
+/* FEATURED VIDEO CARDS */
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    justify-items:center;
+}
+
+.card{
+    background: rgba(255,255,255,0.6);
+    border-radius:20px;
+    padding:25px;
+    backdrop-filter: blur(15px);
+    transition:0.3s;
+    width:100%;
+    max-width:320px;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 14px 40px rgba(0,0,0,0.12);
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.card p{
+    font-size:16px;
+    color:#333;
 }
 
 /* FOOTER */
-footer {
-  padding: 40px 10%;
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  border-top: 1px solid rgba(0,0,0,0.05);
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    font-size:14px;
 }
 </style>
 </head>
@@ -204,172 +230,150 @@ footer {
 
 <!-- NAVBAR -->
 <nav>
-  <div><strong>CREATOR THINK</strong></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#trailer">Trailer</a>
-    <a href="#videos">Videos</a>
-    <a href="#assets">Exclusive</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <div><strong>CREATOR THINK</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#video">Video</a>
+        <a href="#featured">Featured</a>
+        <a href="#assets">Assets</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero" data-aos="fade-up">
-  <h1>CREATOR THINK</h1>
-  <p>Premium Sinhala Tech & Gaming Content</p>
-  <a class="btn" href="https://youtube.com/" target="_blank">Visit My Channel</a>
+    <h1>Think Different.<br>Create Better.</h1>
+    <p>Sinhala Tech • Gaming • Creative Content</p>
+    <a class="btn" href="https://youtube.com/" target="_blank">Watch on YouTube</a>
 </div>
 
 <!-- ABOUT -->
 <section id="about" data-aos="fade-up">
-  <h2 class="section-title">About Me</h2>
-  <div class="card">
-    <p>Hello! I create premium Sinhala tech tutorials, gaming content, and exclusive creative assets to help fellow creators and gamers grow.</p>
-  </div>
+    <h2 class="section-title">Designed for Creators.</h2>
+    <div class="glass-section">
+        <p class="section-text">
+            CREATOR THINK delivers high-quality Sinhala tech tutorials,
+            gaming insights and creative breakdowns crafted with precision.
+        </p>
+    </div>
 </section>
 
-<!-- CHANNEL TRAILER -->
-<section id="trailer" data-aos="fade-up">
-  <h2 class="section-title">Channel Trailer</h2>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
-  </div>
+<!-- VIDEO -->
+<section id="video" class="video" data-aos="fade-up">
+    <h2 class="section-title">Latest Release.</h2>
+    <div class="glass-section">
+        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+    </div>
 </section>
 
 <!-- FEATURED VIDEOS -->
-<section id="videos" data-aos="fade-up">
-  <h2 class="section-title">Featured Videos</h2>
+<section id="featured" data-aos="fade-up">
+    <h2 class="section-title">Featured Videos</h2>
 
-  <!-- VIDEO CATEGORY NAV -->
-  <div class="video-categories">
-    <button class="active" data-category="most-viewed">Most Viewed</button>
-    <button data-category="latest">Latest</button>
-    <button data-category="pc-guides">PC Guides</button>
-    <button data-category="gaming">Gaming</button>
-  </div>
+    <div class="video-categories">
+        <button class="active" data-category="most-viewed">Most Viewed</button>
+        <button data-category="latest">Latest</button>
+        <button data-category="pc-guides">PC Guides</button>
+        <button data-category="gaming">Gaming</button>
+    </div>
 
-  <div class="cards" id="video-cards">
-    <!-- Video cards with data-category for filtering -->
-    <div class="card" data-category="most-viewed">
-      <h3>Most Viewed Video 1</h3>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p>Top tech video with highest views.</p>
+    <div class="cards" id="video-cards">
+        <div class="card" data-category="most-viewed">
+            <h3>Most Viewed Video 1</h3>
+            <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+            <p>Top tech video with highest views.</p>
+        </div>
+        <div class="card" data-category="latest">
+            <h3>Latest Video 1</h3>
+            <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+            <p>Newest upload on the channel.</p>
+        </div>
+        <div class="card" data-category="pc-guides">
+            <h3>PC Guide 1</h3>
+            <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+            <p>PC build tutorial and tips.</p>
+        </div>
+        <div class="card" data-category="gaming">
+            <h3>Gaming Highlight 1</h3>
+            <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+            <p>Exciting gaming content and tips.</p>
+        </div>
     </div>
-    <div class="card" data-category="latest">
-      <h3>Latest Video 1</h3>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p>Newest video upload to the channel.</p>
-    </div>
-    <div class="card" data-category="pc-guides">
-      <h3>PC Guide 1</h3>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p>PC build tutorial and tips.</p>
-    </div>
-    <div class="card" data-category="gaming">
-      <h3>Gaming Highlight 1</h3>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p>Exciting gaming content and tips.</p>
-    </div>
-  </div>
 </section>
 
 <!-- EXCLUSIVE ASSETS -->
 <section id="assets" data-aos="fade-up">
-  <h2 class="section-title">Exclusive Assets</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Free Wallpapers</h3>
-      <p>Download high-quality exclusive wallpapers for your devices.</p>
+    <h2 class="section-title">Exclusive Assets</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Free Wallpapers</h3>
+            <p>Download exclusive high-quality wallpapers.</p>
+        </div>
+        <div class="card">
+            <h3>Templates & Tools</h3>
+            <p>Special creative templates & assets for creators.</p>
+        </div>
     </div>
-    <div class="card">
-      <h3>Templates & Tools</h3>
-      <p>Special creative templates and assets for creators.</p>
-    </div>
-  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" data-aos="fade-up">
-  <h2 class="section-title">Contact & Social</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Email</h3>
-      <p>example@email.com</p>
+    <h2 class="section-title">Contact & Social</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Email</h3>
+            <p>example@email.com</p>
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>
+                <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
+                <a class="btn" href="#" target="_blank">Instagram</a>
+                <a class="btn" href="#" target="_blank">Discord</a>
+            </p>
+        </div>
     </div>
-    <div class="card">
-      <h3>Follow Me</h3>
-      <p>
-        <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
-        <a class="btn" href="#" target="_blank">Instagram</a>
-        <a class="btn" href="#" target="_blank">Discord</a>
-      </p>
-    </div>
-  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 CREATOR THINK — Designed by Lahiru Rukshan
+    © 2026 CREATOR THINK — Lahiru Rukshan
 </footer>
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-// Initialize AOS
-AOS.init({ duration: 1200, once: true });
+AOS.init({ duration:1200, once:true });
 
-// ---------------- VIDEO CATEGORY FILTER ----------------
+// VIDEO CATEGORY FILTER
 const categoryButtons = document.querySelectorAll('.video-categories button');
 const videoCards = document.querySelectorAll('#video-cards .card');
 
 categoryButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    categoryButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.category;
-    videoCards.forEach(card => {
-      if(cat === card.dataset.category || cat === 'all') card.style.display = 'block';
-      else card.style.display = 'none';
+    btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        videoCards.forEach(card => {
+            card.style.display = (cat === card.dataset.category || cat === 'all') ? 'block' : 'none';
+        });
     });
-  });
 });
 
-// ---------------- PARALLAX / GLASS ANIMATIONS ----------------
-gsap.utils.toArray('.card').forEach(card => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 80%",
-      toggleActions: "play none none none"
-    },
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out"
-  });
+// GSAP scroll animations
+gsap.utils.toArray('.glass-section, .card').forEach(el=>{
+    gsap.from(el,{
+        scrollTrigger:{ trigger:el, start:"top 85%", toggleActions:"play none none none" },
+        y:60,
+        opacity:0,
+        duration:1,
+        ease:"power3.out"
+    });
 });
-
-gsap.utils.toArray('.hero h1, .hero p, .btn').forEach(el => {
-  gsap.from(el, {
-    y: 50,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out",
-    stagger: 0.2
-  });
+gsap.utils.toArray('.hero h1,.hero p,.btn').forEach(el=>{
+    gsap.from(el,{y:50, opacity:0, duration:1.2, ease:"power3.out", stagger:0.2});
 });
 </script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 </html>
