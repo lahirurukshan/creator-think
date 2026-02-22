@@ -5,110 +5,164 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CREATOR THINK</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #0e0e0e;
-    color: white;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0a0a0a;
+    color:white;
 }
 
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #111, #1a1a1a);
-    text-align: center;
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
-header h1 {
-    font-size: 60px;
-    font-weight: 800;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
 }
 
-header p {
-    margin-top: 15px;
-    font-size: 18px;
-    opacity: 0.8;
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
 }
 
-.btn {
-    margin-top: 30px;
-    padding: 12px 30px;
-    border-radius: 30px;
-    background: #ff0000;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+.hero h1{
+    font-size:70px;
+    font-weight:900;
+    background:linear-gradient(90deg,#ff0000,#ff7300);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
-.btn:hover {
-    background: white;
-    color: black;
+.hero p{
+    margin-top:20px;
+    font-size:18px;
+    opacity:0.8;
 }
 
-section {
-    padding: 80px 10%;
-    text-align: center;
+.btn{
+    margin-top:30px;
+    padding:14px 35px;
+    border-radius:40px;
+    background:linear-gradient(90deg,#ff0000,#ff7300);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
 }
 
-.section-title {
-    font-size: 35px;
-    margin-bottom: 40px;
+.btn:hover{
+    transform:scale(1.05);
 }
 
-.video-container iframe {
-    width: 100%;
-    max-width: 700px;
-    height: 400px;
-    border-radius: 15px;
+/* SECTION */
+
+section{
+    padding:100px 10%;
+    text-align:center;
 }
 
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #111;
-    opacity: 0.7;
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
 }
+
+/* GLASS CARD */
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:40px;
+    backdrop-filter:blur(10px);
+}
+
+/* VIDEO */
+
+.video iframe{
+    width:100%;
+    max-width:800px;
+    height:450px;
+    border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px;
+    text-align:center;
+    background:#111;
+    opacity:0.7;
+}
+
 </style>
-
 </head>
+
 <body>
 
-<header>
+<nav>
+    <div><strong>CREATOR THINK</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#videos">Videos</a>
+        <a href="#gaming">Gaming</a>
+    </div>
+</nav>
+
+<div class="hero">
     <h1>CREATOR THINK</h1>
-    <p>Tech • Gaming • Creative Content</p>
-    <a class="btn" href="https://youtube.com/@creatorthinklk?si=mrZiWWRC6Y54WT-c="_blank">Visit My Channel</a>
-</header>
+    <p>Sinhala Tech • Gaming • Creative Content</p>
+    <a class="btn" href="https://youtube.com/@creatorthinklk?si=nghduMlSuMU9Iy1W" target="_blank">Visit My Channel</a>
+</div>
 
-<section>
+<section id="about">
     <h2 class="section-title">About Me</h2>
-    <p>Welcome to CREATOR THINK. I create Sinhala tech tutorials, gaming content and creative videos to help creators grow.</p>
-</section>https://youtu.be/9k4-cycnA78?si=DM8cGy7LubhuCobr
+    <div class="card">
+        <p>I create high quality Sinhala tech tutorials, gaming breakdowns and creative content to help new creators grow smarter.</p>
+    </div>
+</section>
 
-<section>
+<section id="videos">
     <h2 class="section-title">Latest Video</h2>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78?si=DM8cGy7LubhuCobr"
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/9k4-cycnA78"
         frameborder="0"
         allowfullscreen></iframe>
     </div>
-    <h2 class="section-title">Follow Me</h2>
-    <p>
-        <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
-        <a class="btn" href="#" target="_blank">Instagram</a>
-        <a class="btn" href="#" target="_blank">Facebook</a>
-    </p>
+</section>
+
+<section id="gaming">
+    <h2 class="section-title">Gaming Content</h2>
+    <div class="card">
+        <p>Explosive gameplay from open-world titles like Far Cry, Just Cause and tactical adventures.</p>
+    </div>
 </section>
 
 <footer>
