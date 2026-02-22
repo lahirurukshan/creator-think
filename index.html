@@ -5,143 +5,267 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CREATOR THINK</title>
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
+<!-- AOS Library for scroll animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#ffffff;
-    color:#111;
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 10%;
-    font-weight:500;
+/* ---------------- NAVBAR ---------------- */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-nav a{
-    text-decoration:none;
-    color:#111;
-    margin-left:20px;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-/* HERO */
-.hero{
-    text-align:center;
-    padding:120px 10% 80px;
+nav a:hover {
+  color: #ff4c4c;
 }
 
-.hero h1{
-    font-size:70px;
-    font-weight:900;
-    letter-spacing:-2px;
+/* ---------------- HERO ---------------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  background: linear-gradient(135deg,#1a1a1a,#0a0a0a);
 }
 
-.hero p{
-    margin-top:20px;
-    font-size:22px;
-    color:#555;
+.hero h1 {
+  font-size: 70px;
+  font-weight: 900;
+  background: linear-gradient(90deg,#ff4c4c,#ff7300);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -2px;
 }
 
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 40px;
-    border-radius:50px;
-    background:#000;
-    color:#fff;
-    text-decoration:none;
-    font-weight:500;
-    transition:0.3s;
+.hero p {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0.8;
 }
 
-.btn:hover{
-    opacity:0.8;
+.btn {
+  margin-top: 30px;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#ff4c4c,#ff7300);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* SECTIONS */
-section{
-    text-align:center;
-    padding:120px 10%;
+.btn:hover {
+  transform: scale(1.05);
 }
 
-.section-title{
-    font-size:50px;
-    font-weight:800;
-    margin-bottom:20px;
+/* ---------------- SECTIONS ---------------- */
+section {
+  padding: 100px 10%;
+  text-align: center;
 }
 
-.section-text{
-    font-size:20px;
-    color:#555;
-    max-width:800px;
-    margin:auto;
+.section-title {
+  font-size: 45px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  color: #fff;
 }
 
-/* VIDEO */
-.video iframe{
-    margin-top:40px;
-    width:100%;
-    max-width:900px;
-    height:500px;
-    border-radius:20px;
+/* ---------------- GLASS CARDS ---------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#777;
-    font-size:14px;
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255,76,76,0.4);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* ---------------- VIDEO ---------------- */
+.video iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  padding: 40px 10%;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <div><strong>CREATOR THINK</strong></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#video">Video</a>
-    </div>
+  <div><strong>CREATOR THINK</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#videos">Videos</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#assets">Exclusive</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<div class="hero">
-    <h1>Think Different.<br>Create Better.</h1>
-    <p>Sinhala Tech • Gaming • Creative Content</p>
-    <a class="btn" href="https://youtube.com/@creatorthinklk?si=3KEuWhMq9F1OQ2KN" target="_blank">Watch on YouTube</a>
+<!-- HERO -->
+<div class="hero" data-aos="fade-up">
+  <h1>CREATOR THINK</h1>
+  <p>Sinhala Tech • Gaming • Creative Content</p>
+  <a class="btn" href="https://youtube.com/" target="_blank">Visit My Channel</a>
 </div>
 
-<section id="about">
-    <h2 class="section-title">Designed for Creators.</h2>
-    <p class="section-text">
-        CREATOR THINK delivers high-quality Sinhala tech tutorials,
-        gaming insights and creative breakdowns crafted with precision.
-    </p>
+<!-- ABOUT -->
+<section id="about" data-aos="fade-up">
+  <h2 class="section-title">About Me</h2>
+  <div class="card">
+    <p>Hi! I create high-quality Sinhala tech tutorials, gaming breakdowns, and exclusive creative content for fellow creators and gamers.</p>
+  </div>
 </section>
 
-<section id="video" class="video">
-    <h2 class="section-title">Latest Release.</h2>
-    <iframe src="https://www.youtube.com/embed/9k4-cycnA78"
-    frameborder="0"
-    allowfullscreen></iframe>
+<!-- FEATURED VIDEOS -->
+<section id="videos" data-aos="fade-up">
+  <h2 class="section-title">Featured Video</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Latest Video</h3>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p>Watch the newest tech & gaming content on my channel.</p>
+    </div>
+    <div class="card">
+      <h3>Upcoming Videos</h3>
+      <p>More amazing content coming soon!</p>
+    </div>
+  </div>
 </section>
 
+<!-- GAMING CONTENT -->
+<section id="gaming" data-aos="fade-up">
+  <h2 class="section-title">Gaming Content</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Just Cause Series</h3>
+      <p>High-octane gameplay, open-world chaos, and tricks.</p>
+    </div>
+    <div class="card">
+      <h3>Far Cry Adventures</h3>
+      <p>Exciting mission highlights and gameplay breakdowns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXCLUSIVE ASSETS -->
+<section id="assets" data-aos="fade-up">
+  <h2 class="section-title">Exclusive Assets</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Free Wallpapers</h3>
+      <p>Download exclusive wallpapers for your desktop & mobile.</p>
+    </div>
+    <div class="card">
+      <h3>Templates & Tools</h3>
+      <p>Special assets and templates for creators.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-aos="fade-up">
+  <h2 class="section-title">Contact & Social</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Email</h3>
+      <p>example@email.com</p>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>
+        <a class="btn" href="https://youtube.com/" target="_blank">YouTube</a>
+        <a class="btn" href="#" target="_blank">Instagram</a>
+        <a class="btn" href="#" target="_blank">Discord</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    © 2026 CREATOR THINK — Lahiru Rukshan
+  © 2026 CREATOR THINK — Designed by Lahiru Rukshan
 </footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
 
 </body>
 </html>
