@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CREATOR THINK</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,113 +13,96 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#0a0a0a;
-    color:white;
+    font-family:'Inter',sans-serif;
+    background:#ffffff;
+    color:#111;
 }
 
 /* NAVBAR */
-
 nav{
-    position:fixed;
-    width:100%;
-    padding:20px 10%;
     display:flex;
     justify-content:space-between;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
+    padding:20px 10%;
     font-weight:500;
 }
 
-/* HERO */
+nav a{
+    text-decoration:none;
+    color:#111;
+    margin-left:20px;
+}
 
+/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    padding:0 10%;
+    padding:120px 10% 80px;
 }
 
 .hero h1{
     font-size:70px;
     font-weight:900;
-    background:linear-gradient(90deg,#ff0000,#ff7300);
-    -webkit-background-clip:text;
-    color:transparent;
+    letter-spacing:-2px;
 }
 
 .hero p{
     margin-top:20px;
-    font-size:18px;
-    opacity:0.8;
+    font-size:22px;
+    color:#555;
 }
 
 .btn{
+    display:inline-block;
     margin-top:30px;
-    padding:14px 35px;
-    border-radius:40px;
-    background:linear-gradient(90deg,#ff0000,#ff7300);
-    color:white;
+    padding:14px 40px;
+    border-radius:50px;
+    background:#000;
+    color:#fff;
     text-decoration:none;
-    font-weight:600;
+    font-weight:500;
     transition:0.3s;
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    opacity:0.8;
 }
 
-/* SECTION */
-
+/* SECTIONS */
 section{
-    padding:100px 10%;
     text-align:center;
+    padding:120px 10%;
 }
 
 .section-title{
-    font-size:40px;
-    margin-bottom:40px;
+    font-size:50px;
+    font-weight:800;
+    margin-bottom:20px;
 }
 
-/* GLASS CARD */
-
-.card{
-    background:rgba(255,255,255,0.05);
-    border-radius:20px;
-    padding:40px;
-    backdrop-filter:blur(10px);
+.section-text{
+    font-size:20px;
+    color:#555;
+    max-width:800px;
+    margin:auto;
 }
 
 /* VIDEO */
-
 .video iframe{
+    margin-top:40px;
     width:100%;
-    max-width:800px;
-    height:450px;
+    max-width:900px;
+    height:500px;
     border-radius:20px;
 }
 
 /* FOOTER */
-
 footer{
-    padding:30px;
     text-align:center;
-    background:#111;
-    opacity:0.7;
+    padding:40px;
+    color:#777;
+    font-size:14px;
 }
 
 </style>
@@ -131,42 +114,33 @@ footer{
     <div><strong>CREATOR THINK</strong></div>
     <div>
         <a href="#about">About</a>
-        <a href="#videos">Videos</a>
-        <a href="#gaming">Gaming</a>
+        <a href="#video">Video</a>
     </div>
 </nav>
 
 <div class="hero">
-    <h1>CREATOR THINK</h1>
+    <h1>Think Different.<br>Create Better.</h1>
     <p>Sinhala Tech • Gaming • Creative Content</p>
-    <a class="btn" href="https://youtube.com/@creatorthinklk?si=nghduMlSuMU9Iy1W" target="_blank">Visit My Channel</a>
+    <a class="btn" href="https://youtube.com/@creatorthinklk?si=3KEuWhMq9F1OQ2KN" target="_blank">Watch on YouTube</a>
 </div>
 
 <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="card">
-        <p>I create high quality Sinhala tech tutorials, gaming breakdowns and creative content to help new creators grow smarter.</p>
-    </div>
+    <h2 class="section-title">Designed for Creators.</h2>
+    <p class="section-text">
+        CREATOR THINK delivers high-quality Sinhala tech tutorials,
+        gaming insights and creative breakdowns crafted with precision.
+    </p>
 </section>
 
-<section id="videos">
-    <h2 class="section-title">Latest Video</h2>
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/9k4-cycnA78"
-        frameborder="0"
-        allowfullscreen></iframe>
-    </div>
-</section>
-
-<section id="gaming">
-    <h2 class="section-title">Gaming Content</h2>
-    <div class="card">
-        <p>Explosive gameplay from open-world titles like Far Cry, Just Cause and tactical adventures.</p>
-    </div>
+<section id="video" class="video">
+    <h2 class="section-title">Latest Release.</h2>
+    <iframe src="https://www.youtube.com/embed/9k4-cycnA78"
+    frameborder="0"
+    allowfullscreen></iframe>
 </section>
 
 <footer>
-    © 2026 CREATOR THINK | Designed by Lahiru Rukshan
+    © 2026 CREATOR THINK — Lahiru Rukshan
 </footer>
 
 </body>
