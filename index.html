@@ -6,9 +6,9 @@
 <title>CREATOR THINK</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<!-- AOS Library for scroll animations -->
+<!-- AOS for scroll animations -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
@@ -20,28 +20,28 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  overflow-x: hidden;
+  font-family: 'Google Sans', sans-serif;
+  background: #f7f7f7;
+  color: #111;
 }
 
-/* ---------------- NAVBAR ---------------- */
+/* NAVBAR */
 nav {
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
+  top:0;
+  left:0;
   display: flex;
   justify-content: space-between;
   padding: 20px 10%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.8);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav a {
-  color: #fff;
+  color: #111;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
@@ -52,7 +52,7 @@ nav a:hover {
   color: #ff4c4c;
 }
 
-/* ---------------- HERO ---------------- */
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -61,40 +61,39 @@ nav a:hover {
   align-items: center;
   text-align: center;
   padding: 0 10%;
-  background: linear-gradient(135deg,#1a1a1a,#0a0a0a);
+  background: linear-gradient(135deg,#eaeaea,#f7f7f7);
 }
 
 .hero h1 {
   font-size: 70px;
   font-weight: 900;
-  background: linear-gradient(90deg,#ff4c4c,#ff7300);
-  -webkit-background-clip: text;
-  color: transparent;
   letter-spacing: -2px;
+  color: #111;
 }
 
 .hero p {
   margin-top: 20px;
   font-size: 20px;
-  opacity: 0.8;
+  color: #555;
 }
 
 .btn {
   margin-top: 30px;
   padding: 14px 40px;
   border-radius: 40px;
-  background: linear-gradient(90deg,#ff4c4c,#ff7300);
-  color: white;
+  background: #111;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
+  opacity: 0.8;
   transform: scale(1.05);
 }
 
-/* ---------------- SECTIONS ---------------- */
+/* SECTIONS */
 section {
   padding: 100px 10%;
   text-align: center;
@@ -103,11 +102,11 @@ section {
 .section-title {
   font-size: 45px;
   margin-bottom: 40px;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 900;
+  color: #111;
 }
 
-/* ---------------- GLASS CARDS ---------------- */
+/* GLASS CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -115,16 +114,17 @@ section {
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.6);
   border-radius: 20px;
   padding: 25px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   transition: 0.3s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255,76,76,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
 }
 
 .card h3 {
@@ -135,24 +135,25 @@ section {
 
 .card p {
   font-size: 16px;
-  color: #ccc;
+  color: #333;
 }
 
-/* ---------------- VIDEO ---------------- */
+/* VIDEO */
 .video iframe {
   width: 100%;
-  max-width: 800px;
-  height: 450px;
+  max-width: 900px;
+  height: 500px;
   border-radius: 20px;
   margin-top: 20px;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 footer {
   padding: 40px 10%;
   text-align: center;
   color: #777;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 </style>
 </head>
@@ -164,8 +165,8 @@ footer {
   <div><strong>CREATOR THINK</strong></div>
   <div>
     <a href="#about">About</a>
+    <a href="#trailer">Trailer</a>
     <a href="#videos">Videos</a>
-    <a href="#gaming">Gaming</a>
     <a href="#assets">Exclusive</a>
     <a href="#contact">Contact</a>
   </div>
@@ -174,7 +175,7 @@ footer {
 <!-- HERO -->
 <div class="hero" data-aos="fade-up">
   <h1>CREATOR THINK</h1>
-  <p>Sinhala Tech • Gaming • Creative Content</p>
+  <p>Premium Sinhala Tech & Gaming Content</p>
   <a class="btn" href="https://youtube.com/" target="_blank">Visit My Channel</a>
 </div>
 
@@ -182,39 +183,32 @@ footer {
 <section id="about" data-aos="fade-up">
   <h2 class="section-title">About Me</h2>
   <div class="card">
-    <p>Hi! I create high-quality Sinhala tech tutorials, gaming breakdowns, and exclusive creative content for fellow creators and gamers.</p>
+    <p>Hello! I create premium Sinhala tech tutorials, gaming content, and exclusive creative assets to help fellow creators and gamers grow.</p>
+  </div>
+</section>
+
+<!-- CHANNEL TRAILER -->
+<section id="trailer" data-aos="fade-up">
+  <h2 class="section-title">Channel Trailer</h2>
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
 
 <!-- FEATURED VIDEOS -->
 <section id="videos" data-aos="fade-up">
-  <h2 class="section-title">Featured Video</h2>
+  <h2 class="section-title">Featured Videos</h2>
   <div class="cards">
     <div class="card">
       <h3>Latest Video</h3>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/9k4-cycnA78" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p>Watch the newest tech & gaming content on my channel.</p>
+      <p>Check out the newest tech & gaming content.</p>
     </div>
     <div class="card">
-      <h3>Upcoming Videos</h3>
+      <h3>Coming Soon</h3>
       <p>More amazing content coming soon!</p>
-    </div>
-  </div>
-</section>
-
-<!-- GAMING CONTENT -->
-<section id="gaming" data-aos="fade-up">
-  <h2 class="section-title">Gaming Content</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Just Cause Series</h3>
-      <p>High-octane gameplay, open-world chaos, and tricks.</p>
-    </div>
-    <div class="card">
-      <h3>Far Cry Adventures</h3>
-      <p>Exciting mission highlights and gameplay breakdowns.</p>
     </div>
   </div>
 </section>
@@ -225,11 +219,11 @@ footer {
   <div class="cards">
     <div class="card">
       <h3>Free Wallpapers</h3>
-      <p>Download exclusive wallpapers for your desktop & mobile.</p>
+      <p>Download high-quality exclusive wallpapers for your devices.</p>
     </div>
     <div class="card">
       <h3>Templates & Tools</h3>
-      <p>Special assets and templates for creators.</p>
+      <p>Special creative templates and assets for creators.</p>
     </div>
   </div>
 </section>
